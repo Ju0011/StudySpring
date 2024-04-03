@@ -1,0 +1,29 @@
+
+
+<!--navigation-->
+{{>layouts/header}}
+
+<!--article 사용범위 지정-->
+{{#article}}
+<!--content-->
+<form class ="container" action = "/articles/update" method = "post">
+    <!--hidden태그로 안보이게 id값 넘겨줌-->
+    <input name="id" type="hidden" value="{{id}}">
+    <div class=" mb-3">
+        <label class = "form-label">제목</label>
+    <!-- <input type = "text" class="form-control" name="title" value="{{article.title}}"> #로 사용범위 지정해줘서 아랫줄처럼 간편해짐-->
+
+        <input type = "text" class="form-control" name="title" value="{{title}}">
+    </div>
+    <div class=" mb-3">
+        <label class = "form-label">내용</label>
+        <textarea class="form-control" rows = "3" name="content">{{content}}</textarea>
+    </div>
+    <button type = "submit" class="btn btn-primary">Submit</button>
+
+    <a href="/articles/{{id}}">Back</a>
+</form>
+{{/article}}
+
+<!--site info-->
+{{>layouts/footer}}

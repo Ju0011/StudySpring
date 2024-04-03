@@ -1,0 +1,32 @@
+
+
+<!--navigation-->
+{{>layouts/header}}
+
+<!--content-->
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    {{#articleList}}
+        <tr>
+            <th>{{id}}</th>
+            <td><a href ="/articles/{{id}}">{{title}}</a></td> <!--제목에 상세페이지 링크 추가-->
+            <td>{{content}}</td>
+        </tr>
+    {{/articleList}}
+    </tbody>
+</table>
+
+<!--새글 작성하는 링크 추가-->
+<a href = "/articles/new">New Article</a>
+
+<!--site info-->
+{{>layouts/footer}}
