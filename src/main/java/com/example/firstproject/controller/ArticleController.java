@@ -60,10 +60,10 @@ public class ArticleController {
         List<Article> articleEntityList = articleRepository.findAll();
         //findAll( ) 메서드가 반환하는 데이터 타입은 Iterable 인데 작성 타입은 List 라서 오류뜸
         //캐스팅을 사용한 형변환 -> ArticleRepository 에서 Override 해줌
-        log.info(articleEntityList.toString());
+
 
         // 2. 모델에 데이터 등록하기
-        model.addAttribute("article", articleEntityList);
+        model.addAttribute("articleList", articleEntityList);
 
         // 3. 뷰 페이지 설정하기
         return "articles/index";
@@ -73,7 +73,6 @@ public class ArticleController {
     public String edit(@PathVariable Long id, Model model){
         //수정할 데이터 가져오기
         Article articleEntity = articleRepository.findById(id).orElse(null);
-        log.info(articleEntity.toString());
 
         //모델에 데이터 등록하기
         model.addAttribute("article", articleEntity);
