@@ -23,6 +23,13 @@ public class Article {
     @Column     //content 필드 선언, DB 테이블의 content열과 연결됨
     private String content;
 
+    public void patch(Article article) {
+        //갱신할 값이 있으면 this(target)의 title, content 갱신
+        if(article.title != null) this.title = article.title;
+        if(article.content != null) this.content = article.content;
+
+    }
+
     // @Gatter
 //    public Long getId(){
 //        return id;
