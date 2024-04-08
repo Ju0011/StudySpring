@@ -1,0 +1,7 @@
+# 카카오 로그인 설정
+kakao :
+  client :
+    id : a8284cdd509bfca2093c767e8d9160ab
+    secret : 4CovxEEOrDFzGe9Ammw7nm2UZ714PDJB
+  redirect :
+    url : http://localhost:8080/oauth2/code/kakao
